@@ -1,0 +1,13 @@
+services:
+  # Static Site
+  - type: static_site
+    name: veloso-transport
+    buildCommand: npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+    headers:
+      - path: /*
+        headers:
+          Cache-Control: no-cache

@@ -31,8 +31,11 @@ export const submitCarrierApplication = async (formData: CarrierFormData): Promi
       }
     });
 
+    // Determine API URL based on environment
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+    
     // Call the real backend API
-    const response = await fetch('http://localhost:3001/api/carrier-application', {
+    const response = await fetch(`${API_URL}/api/carrier-application`, {
       method: 'POST',
       body: formDataToSubmit,
     });

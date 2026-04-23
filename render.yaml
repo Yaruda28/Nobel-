@@ -1,12 +1,29 @@
 services:
-  # Static Site
+  # Backend Email Server
+  - type: web
+    name: nobel-dispatcher-api
+    runtime: node
+    buildCommand: npm install
+    startCommand: node server.cjs
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: EMAIL_USER
+        value: yarednobel21@gmail.com
+      - key: EMAIL_PASS
+        sync: false
+    plan: free
+
+  # Static Site (Frontend)
   - type: static_site
-    name: veloso-transport
-    buildCommand: npm run build
+    name: nobel-dispatcher-website
+    buildCommand: npm install && npm run build
     staticPublishPath: ./dist
     envVars:
       - key: NODE_VERSION
         value: 18
+      - key: VITE_API_URL
+        value: https://nobel-dispatcher-api.onrender.com
     headers:
       - path: /*
         headers:

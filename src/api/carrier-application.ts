@@ -158,7 +158,7 @@ export async function POST(request: NextRequest) {
     // Send email
     const mailOptions = {
       from: process.env.SMTP_USER,
-      to: 'info@nobel-dispatcher.com',
+      to: 'support@nobel-dispatcher.com',
       subject: `New Carrier Application: ${carrierData.companyName} (${carrierData.mcNumber})`,
       html: emailContent,
       attachments: attachments,

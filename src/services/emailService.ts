@@ -59,6 +59,7 @@ const simulateEmailService = async (formData: FormData): Promise<{ success: bool
   }
 
   console.log('=== CARRIER APPLICATION SUBMISSION ===');
+  console.log('Sending to: support@nobel-dispatcher.com');
   console.log('Company:', data.companyName);
   console.log('MC Number:', data.mcNumber);
   console.log('Email:', data.email);
@@ -74,8 +75,8 @@ const simulateEmailService = async (formData: FormData): Promise<{ success: bool
   // Simulate API delay
   await new Promise(resolve => setTimeout(resolve, 1500));
 
-  // In a real implementation, this would send an email to support@nobel-dispatcher.com
-  // For now, we'll just log the data and return success
+  // In production, this would send an email to support@nobel-dispatcher.com
+  // For now, we're simulating the email sending with console logs
   
   return {
     success: true,

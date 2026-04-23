@@ -31,17 +31,30 @@ export const submitCarrierApplication = async (formData: CarrierFormData): Promi
       }
     });
 
-    // For now, we'll simulate the email sending
-    // In a real production environment, you would send this to your backend API
-    const response = await simulateEmailService(formDataToSubmit);
-    
-    return response;
+    // Call the real backend API
+    const response = await fetch('http://localhost:3001/api/carrier-application', {
+      method: 'POST',
+      body: formDataToSubmit,
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to submit application');
+    }
+
+    return await response.json();
   } catch (error) {
     console.error('Error submitting carrier application:', error);
-    return {
-      success: false,
-      message: 'Failed to submit application. Please try again or contact us directly.'
-    };
+    // Fallback to simulation if backend is not available
+    console.log('🔄 Backend not available, falling back to simulation');
+    const formDataToSubmit = new FormData();
+    Object.entries(formData).forEach(([key, value]) => {
+      if (value instanceof File) {
+        formDataToSubmit.append(key, value);
+      } else if (typeof value === 'string') {
+        formDataToSubmit.append(key, value);
+      }
+    });
+    return simulateEmailService(formDataToSubmit);
   }
 };
 

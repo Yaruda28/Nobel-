@@ -21,9 +21,9 @@ const Navbar = () => {
       <div className="bg-gradient-to-r from-primary to-primary/90 text-primary-foreground text-sm border-b border-accent/10">
         <div className="container flex items-center justify-between py-3">
           <div className="flex items-center gap-8">
-            <a href="tel:+13022048440" className="flex items-center gap-2 hover:text-accent transition-all duration-300 group">
+            <a href="tel:+13076556320" className="flex items-center gap-2 hover:text-accent transition-all duration-300 group">
               <Phone className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
-              <span className="hidden sm:inline font-medium">+1 (307) 241-3646</span>
+              <span className="hidden sm:inline font-medium">+1 (307) 655-6320</span>
             </a>
             <a href="mailto:info@nobel-dispatcher.com" className="flex items-center gap-2 hover:text-accent transition-all duration-300 group">
               <Mail className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
@@ -81,12 +81,12 @@ const Navbar = () => {
 
           <div className="hidden md:flex items-center gap-4">
             <motion.a
-              href="tel:+13072413646"
+              href="tel:+13076556320"
               whileHover={{ scale: 1.05 }}
               className="text-sm font-semibold text-foreground flex items-center gap-2 px-4 py-2 rounded-lg border border-accent/20 hover:border-accent/40 transition-all duration-300"
             >
               <Phone className="h-4 w-4 text-accent" />
-              (307) 241-3646
+              (307) 655-6320
             </motion.a>
             <motion.a
               href="#carrier-form"

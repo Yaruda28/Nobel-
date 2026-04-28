@@ -24,6 +24,11 @@ const Footer = () => {
                   </a>
                 </li>
               ))}
+              <li>
+                <a href="/privacy-policy" className="text-primary-foreground/60 hover:text-accent transition-colors duration-200">
+                  Privacy Policy
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -32,7 +37,7 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2 text-primary-foreground/60">
                 <Phone className="h-4 w-4 text-accent" />
-                +1 (307) 241-3646
+                +1 (307) 655-6320
               </li>
               <li className="flex items-center gap-2 text-primary-foreground/60">
                 <Mail className="h-4 w-4 text-accent" />
